@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <title>Validation, Fruits and Vegetables</title>
+    <style>
+      form {
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      input,
+      textarea {
+        width: 100%;
+      }
+      button {
+        margin-top: 10px;
+        align-self: center;
+        padding: 8px;
+        color: yellow;
+        background-color: blue;
+        border-radius: 10px;
+      }
+      ul {
+        margin-left: 20px;
+      }
+    </style>
+
+    <script>
+      function validateRegistration() {
+        // First Name validation
+        var firstName = document.getElementById("firstName").value;
+        if (!/^[a-zA-Z]+$/.test(firstName) || firstName.length < 6) {
+          alert(
+            "Invalid First Name. It should contain alphabets and be at least 6 characters long."
+          );
+          return false;
+        }
+
+        // Password validation
+        var password = document.getElementById("password").value;
+        if (password.length < 6) {
+          alert("Invalid Password. It should be at least 6 characters long.");
+          return false;
+        }
+
+        // E-mail validation
+        var email = document.getElementById("email").value;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          alert("Invalid E-mail. Please enter a valid email address.");
+          return false;
+        }
+
+        // Mobile Number validation
+        var mobileNumber = document.getElementById("mobileNumber").value;
+        if (!/^\d{10}$/.test(mobileNumber)) {
+          alert("Invalid Mobile Number. It should contain 10 digits only.");
+          return false;
+        }
+
+        // Last Name validation
+        var lastName = document.getElementById("lastName").value;
+        // Address validation
+        var address = document.getElementById("address").value;
+        if (lastName.trim() === "" || address.trim() === "") {
+          alert("Last Name and Address should not be empty.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Validation form</h1>
+
+    <form onsubmit="return validateRegistration()">
+      <label>First Name:</label>
+      <input type="text" id="firstName" required /><br />
+
+      <label>Last Name:</label>
+      <input type="text" id="lastName" required /><br />
+
+      <label>Password:</label>
+      <input type="password" id="password" required /><br />
+
+      <label>E-mail:</label>
+      <input type="email" id="email" required /><br />
+
+      <label>Mobile Number:</label>
+      <input type="tel" id="mobileNumber" required /><br />
+
+      <label>Address:</label>
+      <textarea id="address" required></textarea><br />
+
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Ordered List of Fruits and Vegetables</h1>
+
+    <ul>
+      <li>
+        Fruits
+        <ul>
+          <li>Mango</li>
+          <li>Orange</li>
+        </ul>
+      </li>
+      <li>
+        Vegetables
+        <ul>
+          <li>Cabbage</li>
+          <li>
+            Capsicum
+            <ul>
+              <li>Green Capsicum</li>
+              <li>Yellow Capsicum</li>
+              <li>Red Capsicum</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

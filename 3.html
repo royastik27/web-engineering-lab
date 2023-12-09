@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>CSS & Table</title>
+    <link rel="stylesheet" href="./3.css" />
+
+    <style>
+      table {
+        border: 1px solid black;
+      }
+      td,
+      th {
+        border: 1px solid black;
+
+        padding: 5px;
+      }
+      /* Internal Style */
+      .internal-style {
+        font-family: "Times New Roman", serif;
+        background-image: url("https://i.pinimg.com/736x/1a/63/bb/1a63bb087138e5386498f28ef2a7047e.jpg");
+        background-repeat: no-repeat;
+        padding: 20px;
+        margin: 10px;
+      }
+
+      .internal-style p {
+        color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1
+      style="
+        font-family: 'Arial', sans-serif;
+        color: blue;
+        background-color: orange;
+      "
+    >
+      Inline Style
+    </h1>
+
+    <div class="internal-style">
+      <p>This paragraph uses internal style.</p>
+    </div>
+
+    <div class="external-style">
+      <p>This paragraph uses external style.</p>
+      <a href="#" class="link">Visit our website</a>
+    </div>
+    <table>
+      <tr>
+        <th rowspan="2">Heading</th>
+        <th>Students</th>
+        <th colspan="3">Details</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Roll Number</th>
+      </tr>
+      <tr>
+        <td rowspan="4">Student List</td>
+        <td>1</td>
+        <td>Victor</td>
+        <td>Computer Science</td>
+        <td>12345</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Williams</td>
+        <td>Electronics</td>
+        <td>23456</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Harry</td>
+        <td>Electrical</td>
+        <td>34567</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Rick</td>
+        <td>Civil</td>
+        <td>45678</td>
+      </tr>
+    </table>
+  </body>
+</html>

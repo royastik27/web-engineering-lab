@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Form</title>
+    <style>
+      body {
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        border-bottom: 5px solid blue;
+      }
+
+      img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      input:focus {
+        outline: none;
+        border-bottom: 2px solid #3498db;
+      }
+
+      .name-group {
+        display: flex;
+        gap: 4px;
+      }
+
+      .name-group input {
+        flex: 1;
+        margin: 8px 2px 8px 0;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaXhinCKAD6h8bRJTqXiIkzx6K0vl-51FXZNYEa1emJ_Z-3Lud"
+        alt="Form Image"
+      />
+      <div class="name-group">
+        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Last Name" />
+      </div>
+      <input type="text" placeholder="Username" />
+      <input type="email" placeholder="Email" />
+      <input type="tel" placeholder="Phone Number" />
+      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Confirm Password" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

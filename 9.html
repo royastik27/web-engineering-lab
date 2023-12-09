@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <title>Registration Form</title>
+    <style>
+      body {
+        background-color: aqua;
+        max-width: 100%;
+        margin: auto;
+        border-left: 25px solid pink;
+        border-right: 25px solid pink;
+        padding: 0 50px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+      hr {
+        border-color: white;
+        margin: 10px auto;
+        max-width: 80%;
+      }
+
+      form {
+        max-width: 80%;
+        margin: auto;
+      }
+      .full-width {
+        width: 100%;
+        padding: 4px;
+      }
+      button {
+        width: 100%;
+        background-color: green;
+        color: white;
+        padding: 5px;
+      }
+      #error-message {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Student Registration Form</h2>
+    <hr />
+    <form>
+      <label>First Name:</label>
+      <br />
+      <input class="full-width" type="text" placeholder="Firstname" required />
+      <br /><br />
+      <label>Middle Name:</label>
+      <br />
+      <input class="full-width" type="text" placeholder="Middlename" />
+      <br /><br />
+      <label>Last Name:</label>
+      <br />
+      <input class="full-width" type="text" placeholder="Lastname" required />
+      <br /><br />
+      <label>Courses:</label>
+      <select required>
+        <option selected disabled>select a course</option>
+        <option>Math</option>
+        <option>Science</option>
+        <option>History</option>
+      </select>
+      <br /><br />
+      <label>Gender:</label>
+      <br />
+      <label><input type="radio" name="gender" required /> Male</label>
+      <label><input type="radio" name="gender" required /> Female</label>
+      <label><input type="radio" name="gender" required /> Other</label>
+      <br /><br />
+      <label>Phone:</label>
+      <br />
+      <input
+        class="full-width"
+        type="tel"
+        required
+        pattern="\+\d{1,4}"
+        value="+91"
+      /><br /><br />
+      <input
+        class="full-width"
+        type="tel"
+        placeholder="phone no"
+        required
+        pattern="\d{10}"
+      />
+      <br /><br />
+      <label>Current Address:</label>
+      <br />
+      <textarea
+        class="full-width"
+        rows="4"
+        placeholder="Current Address"
+        required
+      ></textarea>
+      <br /><br />
+      <label>Email:</label>
+      <br />
+      <input
+        class="full-width"
+        type="email"
+        placeholder="Enter Email"
+        required
+      />
+      <br /><br />
+      <label>Password:</label>
+      <br />
+      <input
+        class="full-width"
+        type="password"
+        placeholder="Enter Password"
+        id="password"
+        required
+      />
+      <br /><br />
+      <label>Re-type Password:</label><br />
+      <input
+        class="full-width"
+        type="password"
+        placeholder="Retype Password"
+        id="confirmPassword"
+        required
+      />
+      <br /><br />
+      <div id="error-message"></div>
+      <br />
+
+      <button type="button" onclick="register()">Register</button>
+    </form>
+
+    <script>
+      function register() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var errorMessage = document.getElementById("error-message");
+
+        if (password === "" || confirmPassword === "") {
+          errorMessage.textContent = "Password fields cannot be blank!";
+        } else if (password !== confirmPassword) {
+          errorMessage.textContent = "Passwords do not match!";
+        } else {
+          errorMessage.textContent = "";
+          alert("Registration successful!");
+        }
+      }
+    </script>
+  </body>
+</html>

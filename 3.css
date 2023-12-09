@@ -1,0 +1,33 @@
+/* External Style */
+.external-style {
+  font-family: "Verdana", sans-serif;
+  background-image: url("https://www.cpicglobal.com/wp-content/uploads/2019/03/blog-image-gwadarblog-04.jpg");
+  background-repeat: repeat;
+  padding: 20px;
+  margin: 10px;
+}
+
+.external-style p {
+  color: #666;
+}
+
+/* Link Styles */
+.external-style a {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.external-style a:hover {
+  color: yellow;
+  font-weight: bold;
+}
+
+.external-style a:visited {
+  color: #663399;
+}
+
+.external-style a:active {
+  color: #ff0000;
+  text-decoration: underline;
+}

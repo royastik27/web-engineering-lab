@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Popup Examples</title>
+  </head>
+  <body>
+    <!-- Problem a) Display Date -->
+    <button onclick="displayDate()">Display Date</button>
+    <input type="text" id="dateOutput" readonly />
+
+    <br /><br />
+
+    <!-- Problem b) Factorial of a Number -->
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+    <br /><br />
+
+    <!-- Problem c) Multiplication Table -->
+    <button onclick="generateMultiplicationTable()">
+      Generate Multiplication Table
+    </button>
+
+    <br /><br />
+
+    <!-- Problem d) Sum of Numbers -->
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <script>
+      // Function a) Display Date
+      function displayDate() {
+        const currentDate = new Date().toLocaleDateString();
+        document.getElementById("dateOutput").value = currentDate;
+      }
+
+      // Function b) Factorial of a Number
+      function calculateFactorial() {
+        const n = prompt("Enter a number:");
+        let factorial = 1;
+
+        for (let i = 1; i <= n; i++) {
+          factorial *= i;
+        }
+
+        alert(`Factorial of ${n} is: ${factorial}`);
+      }
+
+      // Function c) Multiplication Table
+      function generateMultiplicationTable() {
+        const n = prompt("Enter a number:");
+        let table = "";
+
+        for (let i = 1; i <= 10; i++) {
+          table += `${n} x ${i} = ${n * i}\n`;
+        }
+
+        alert(`Multiplication Table for ${n}:\n\n${table}`);
+      }
+
+      // Function d) Sum of Numbers
+      function calculateSum() {
+        const n = prompt("Enter a number:");
+        const additionalNumber = confirm("Do you want to add another number?");
+
+        let sum = parseInt(n, 10);
+
+        if (additionalNumber) {
+          const anotherNumber = prompt("Enter another number:");
+          sum += parseInt(anotherNumber, 10);
+        }
+
+        alert(`Sum of the numbers is: ${sum}`);
+      }
+    </script>
+  </body>
+</html>

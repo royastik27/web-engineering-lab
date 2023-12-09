@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>JavaScript Examples</title>
+    <script>
+      function generateFibonacci() {
+        var n = parseInt(
+          prompt("Enter the number of Fibonacci numbers to generate:")
+        );
+        var result = [];
+
+        for (var i = 0; i < n; i++) {
+          if (i <= 1) {
+            result.push(i);
+          } else {
+            result.push(result[i - 1] + result[i - 2]);
+          }
+        }
+
+        alert("Fibonacci Numbers: " + result.join(", "));
+      }
+
+      function generateTable() {
+        var n = parseInt(prompt("Enter the number n:"));
+        var tableContent = "Number\tSquare\n";
+
+        for (var i = 1; i <= n; i++) {
+          tableContent += i + "\t" + i * i + "\n";
+        }
+
+        alert(tableContent);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>JavaScript Examples</h2>
+
+    <button onclick="generateFibonacci()">Generate Fibonacci Numbers</button>
+    <br /><br />
+    <button onclick="generateTable()">Generate Table</button>
+
+    <h2>Image Insertion Example</h2>
+    <img src="path/to/your/image.jpg" alt="Description of the image" />
+  </body>
+</html>

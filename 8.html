@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>Nested List Example</title>
+    <style>
+      #computer-image {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      .marquee {
+        color: blue;
+        font-style: italic;
+      }
+      .input-devices {
+        font-weight: bold;
+        color: green;
+        font-style: oblique;
+      }
+      .output-devices {
+        font-weight: bolder;
+        color: crimson;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      id="computer-image"
+      src="computer_image.jpg"
+      alt="Computer
+Image"
+    />
+
+    <h2>
+      <b
+        ><u><i> Computer System</i></u></b
+      >
+    </h2>
+
+    <ol>
+      <li class="input-devices">
+        <marquee class="marquee"
+          ><h3>
+            <b
+              ><u><i>Input Devices</i></u></b
+            >
+          </h3></marquee
+        >
+
+        <ol type="i">
+          <li>Keyboard</li>
+          <li>Mouse</li>
+          <li>Joystick</li>
+          <li>
+            Scanner
+            <ol type="a">
+              <li>Flatbed Scanner</li>
+              <li>Handheld Scanner</li>
+            </ol>
+          </li>
+        </ol>
+        <hr />
+      </li>
+
+      <li class="output-devices">
+        <marquee>
+          <h3>
+            <b
+              ><u><i>Output Devices</i></u></b
+            >
+          </h3>
+        </marquee>
+        <ol type="i">
+          <li>
+            Monitor
+            <ol type="a">
+              <li>LCD</li>
+              <li>CRT</li>
+            </ol>
+          </li>
+          <li>
+            Printer
+            <ol type="a">
+              <li>Impact Printer</li>
+              <li>Non-Impact Printer</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <!-- <hr />
+    <h1>apply following parts:</h1>
+    <p>
+      &check;Insert an image of computer on top right corner of web page<br />
+      &check;Display a marquee displaying "Input and Output devices"<br />
+      &check;Use different font styles and colors for input output devices<br />
+      &check;insert horizontal line after input devices are over<br />
+      &check;Use bold, italics and underline in headings<br />
+    </p> -->
+  </body>
+</html>

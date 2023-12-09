@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <title>Country Capitals & Number to Words Converter</title>
+    <style>
+      #capital {
+        font-size: 16px;
+        font-weight: bolder;
+        color: orange;
+        margin-top: 10px;
+      }
+      #word {
+        font-size: 20px;
+        font-weight: bold;
+        color: green;
+        margin-top: 10px;
+      }
+    </style>
+    <script>
+        //function for A
+      function showCapital() {
+        var countrySelect = document.getElementById("countrySelect");
+        var resultDiv = document.getElementById("capital");
+        var capital;
+
+        switch (countrySelect.value) {
+          case "Bangladesh":
+            capital = "Dhaka";
+            break;
+          case "Pakistan":
+            capital = "Islamabad";
+            break;
+          case "USA":
+            capital = "Washington, D.C.";
+            break;
+          case "UK":
+            capital = "London";
+            break;
+          case "France":
+            capital = "Paris";
+            break;
+          case "Germany":
+            capital = "Berlin";
+            break;
+          case "Japan":
+            capital = "Tokyo";
+            break;
+          default:
+            capital = "";
+        }
+
+        resultDiv.innerHTML = "Capital: " + capital;
+      }
+
+      //function for B
+      function convertToWords() {
+        var numberInput = document.getElementById("numberInput").value;
+        var resultDiv = document.getElementById("word");
+
+        if (!/^[0-9]{1,3}$/.test(numberInput)) {
+          resultDiv.innerHTML =
+            "Please enter a valid number between 0 and 999.";
+          return;
+        }
+
+        var units = [
+          "",
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+          "six",
+          "seven",
+          "eight",
+          "nine",
+        ];
+        var teens = [
+          "",
+          "eleven",
+          "twelve",
+          "thirteen",
+          "fourteen",
+          "fifteen",
+          "sixteen",
+          "seventeen",
+          "eighteen",
+          "nineteen",
+        ];
+        var tens = [
+          "",
+          "ten",
+          "twenty",
+          "thirty",
+          "forty",
+          "fifty",
+          "sixty",
+          "seventy",
+          "eighty",
+          "ninety",
+        ];
+
+        var num = parseInt(numberInput);
+        var words = "";
+
+        if (num === 0) {
+          words = "Zero";
+        } else {
+          var hundreds = Math.floor(num / 100);
+          var remainder = num % 100;
+          var tensDigit = Math.floor(remainder / 10);
+          var onesDigit = remainder % 10;
+
+          if (hundreds > 0) {
+            words += units[hundreds] + " hundred";
+            if (remainder > 0) {
+              words += "  ";
+            }
+          }
+
+          if (remainder > 0) {
+            if (remainder < 10) {
+              words += units[remainder];
+            } else if (remainder < 20) {
+              words += teens[remainder - 10];
+            } else {
+              words += tens[tensDigit];
+              if (onesDigit > 0) {
+                words += " " + units[onesDigit];
+              }
+            }
+          }
+        }
+
+        resultDiv.innerHTML = "In words: " + words;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Part A: Country Capitals</h2>
+    <label >Select a Country:</label>
+    <select id="countrySelect" onchange="showCapital()">
+      <option value="none" selected disabled>Select a Country</option>
+      <option value="Bangladesh">Bangladesh</option>
+      <option value="Pakistan">Pakistan</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+      <option value="France">France</option>
+      <option value="Germany">Germany</option>
+      <option value="Japan">Japan</option>
+    </select>
+
+    <div id="capital"></div>
+
+    <hr />
+
+    <h2>Part B: Number to Words Converter</h2>
+    <label for=>Enter a Number (0-999):</label>
+    <input type="text" id="numberInput" placeholder="Enter a number" />
+    <button onclick="convertToWords()">Convert</button>
+
+    <div id="word"></div>
+  </body>
+</html>
